@@ -10,9 +10,11 @@ from sklearn.metrics import accuracy_score, classification_report
 
 def main():
   #collecting tokens
+  #data loading
   filepath = '/Passion project/text.csv'
   data = load_data(filepath)
 
+  #collecting tokens
   cleaned_texts = [word_filter(sentence) for sentence in data["text"]]
   cleaned_texts_joined = [' '.join(tokens) for tokens in cleaned_texts]
 
