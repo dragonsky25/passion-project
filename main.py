@@ -41,6 +41,8 @@ def main():
 
   print(accuracy_score(y_test, y_predict))
   print(classification_report(y_test, y_predict))
+  #print(accuracy_score(y_test, y_predict))
+  #print(classification_report(y_test, y_predict))
 
   return y_predict, y_test
 
@@ -49,3 +51,5 @@ if __name__ == "__main__":
   y_pred, y_test = main()
   print("Predicted labels:", y_pred)
   print("Actual labels:", y_test)
+  #print("Predicted labels:", y_pred)
+  #print("Actual labels:", y_test)
