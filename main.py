@@ -5,7 +5,8 @@ from data_loader import load_data
 from word_filter_func import word_filter
 from feature_extraction import extract_features
 from logistic_regression import log_regression
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, ConfusionMatrixDisplay, confusion_matrix
+import matplotlib.pyplot as plt
 
 
 def main():
@@ -34,6 +35,10 @@ def main():
 
   print(accuracy_score(y_test, y_predict))
   print(classification_report(y_test, y_predict))
+  cm = confusion_matrix(y_test, y_predict)
+  disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+  disp.plot(cmap=plt.cm.Blues)
+  plt.show()
 
   return y_predict, y_test
 
